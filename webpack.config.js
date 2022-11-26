@@ -11,11 +11,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/, //regex: everytime come across css files, use css-loader
-        use: ["style-loader", "css-loader"], //use in reverse order
-        //css- l first to translate css to js and
+        test: /\.scss$/, //regex: everytime come across css files, use css-loader
+        use: ["style-loader", "css-loader", "sass-loader"], //use in reverse order
+        // sass-l first to translate sass to css
+        //css- l  to translate css to js and
         //style- l takes the js and inject to DOM
-        // so reverse: style-loader first then css-loader
+        // so reverse: "style-loader", "css-loader", "sass-loader"
       },
     ],
   },
