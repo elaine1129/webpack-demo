@@ -2,7 +2,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 module.exports = {
   // devtool: false, //get rid of eval(), make it to something we understand
-  entry: "./src/index.js",
+  entry: {
+    main: "./src/index.js", // [name]: entry point--> output file will follow this name
+    vendor: "./src/vendor.js",
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
